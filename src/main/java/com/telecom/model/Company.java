@@ -1,6 +1,7 @@
 package com.telecom.model;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -28,4 +29,14 @@ public class Company {
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	private Set<Campaign> campaigns;
+
+	public Company() {
+		this.products = new HashSet<Product>();
+		this.campaigns = new HashSet<Campaign>();
+	}
+
+	public void addProduct(Product product) {
+		products.add(product);
+	}
 }
+

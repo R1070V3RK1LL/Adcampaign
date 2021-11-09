@@ -1,5 +1,6 @@
 package com.telecom.model;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.FetchType;
@@ -25,4 +26,15 @@ public class Product {
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	private Set<Company> companies;
+
+	public void setPrice(double price1) {
+		this.price=price1;
+
+	}
+
+	public void setQuantity(Integer quantity1) {
+		this.quantity=quantity1;
+
+	}
+
 }
