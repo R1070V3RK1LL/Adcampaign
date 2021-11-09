@@ -4,16 +4,12 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+@Entity
 public class Company {
 	private @Id @GeneratedValue long id;
 	private String name;
@@ -33,6 +29,17 @@ public class Company {
 	public Company() {
 		this.products = new HashSet<Product>();
 		this.campaigns = new HashSet<Campaign>();
+	}
+	public void setBudget(long budget){
+		this.budget=budget;
+	}
+
+	public void setStartingDate(LocalDate starting_date) {
+		this.starting_date = starting_date;
+	}
+
+	public void setEndingDate(LocalDate ending_date) {
+		this.ending_date = ending_date;
 	}
 
 	public void addProduct(Product product) {

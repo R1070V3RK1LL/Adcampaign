@@ -1,5 +1,8 @@
 package com.telecom.service;
 
-public interface CompanyService {
+import java.util.Collection;
+import com.telecom.model.Product;
 
+public interface CompanyService {
+public Collection<Product> findAllProducts();
 }
